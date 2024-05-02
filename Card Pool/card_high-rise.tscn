@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxvoru601pl4q"]
+
+[ext_resource type="PackedScene" uid="uid://bgd70vcoi4e85" path="res://card_prefab.tscn" id="1_0k73t"]
+[ext_resource type="Texture2D" uid="uid://bhgr4llswit36" path="res://Icons/Icons_Water.png" id="2_cytij"]
+[ext_resource type="Texture2D" uid="uid://bfe41clyaq4lx" path="res://Icons/Icons_Iron.png" id="3_2ugic"]
+[ext_resource type="Texture2D" uid="uid://caoovnmdwe87a" path="res://Icons/Icons_Titatnium.png" id="4_faw3i"]
+[ext_resource type="Texture2D" uid="uid://bxpm6eku4q3xd" path="res://Icons/Hex Grids/hex_grids_3.png" id="4_v1k62"]
+[ext_resource type="FontFile" uid="uid://cmqbuj73nhx8q" path="res://Fonts/Tiresias/Tiresias_Infofont.ttf" id="5_av01f"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="5_kl3ml"]
+[ext_resource type="FontFile" uid="uid://dikxwdtbbyk7x" path="res://Fonts/Tiresias/Tiresias Signfont Bold.TTF" id="6_x46lj"]
+
+[node name="Card Prefab" instance=ExtResource("1_0k73t")]
+card_type = "Housing"
+cost = "1H2O 1Fe 1Ti"
+card_name = "high-rise"
+body_text = "You may build 2 additional Buildings on this Region
+Reminder:(All 3 Buildings are considered to be in the same Region)
+C:3"
+
+[node name="Card Title" parent="Bleed/Border/Greater Vbox" index="0"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+text = "high-rise"
+
+[node name="Cost Bar" parent="Bleed/Border/Greater Vbox" index="1"]
+visible = true
+
+[node name="@TextureRect@129645" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="1"]
+layout_mode = 2
+texture = ExtResource("2_cytij")
+stretch_mode = 5
+
+[node name="@TextureRect@129646" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="2"]
+layout_mode = 2
+texture = ExtResource("3_2ugic")
+stretch_mode = 5
+
+[node name="@TextureRect@129647" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="3"]
+layout_mode = 2
+texture = ExtResource("4_faw3i")
+stretch_mode = 5
+
+[node name="Main Body" parent="Bleed/Border/Greater Vbox" index="2"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+
+[node name="Card Cost Spacer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="0"]
+visible = true
+
+[node name="Body Text" type="RichTextLabel" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="1"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_av01f")
+theme_override_fonts/bold_font = ExtResource("6_x46lj")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center]You may build 2 additional [b][b]Building[/b]s[/b] on this [b]Region[/b]"
+fit_content = true
+autowrap_mode = 2
+
+[node name="@RichTextLabel@129650" type="RichTextLabel" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="2"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_av01f")
+theme_override_fonts/bold_font = ExtResource("6_x46lj")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 23
+bbcode_enabled = true
+text = "[center](All 3 [b][b]Building[/b]s[/b] are considered to be in the same [b]Region[/b])"
+fit_content = true
+autowrap_mode = 2
+
+[node name="@Control@129651" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="3" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Colonist Grid" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="4"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+texture = ExtResource("4_v1k62")
+stretch_mode = 3
+script = ExtResource("5_kl3ml")
+color_type = "Housing"
+
+[node name="@Control@129652" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="5" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Box2" parent="Bleed/Border/Greater Vbox/Terraform Label" index="0"]
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+
+[node name="Terraform Body" parent="Bleed/Border/Greater Vbox" index="4"]
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="0" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3

@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://j8aofua4raph"]
+
+[ext_resource type="PackedScene" uid="uid://bgd70vcoi4e85" path="res://card_prefab.tscn" id="1_msuox"]
+[ext_resource type="Texture2D" uid="uid://crj02amyx1rkr" path="res://Icons/Icons_Data.png" id="2_sw56t"]
+[ext_resource type="FontFile" uid="uid://cmqbuj73nhx8q" path="res://Fonts/Tiresias/Tiresias_Infofont.ttf" id="5_7fih2"]
+[ext_resource type="FontFile" uid="uid://dikxwdtbbyk7x" path="res://Fonts/Tiresias/Tiresias Signfont Bold.TTF" id="6_iieg3"]
+
+[node name="Card Prefab" instance=ExtResource("1_msuox")]
+card_type = "RP"
+cost = "1RP"
+card_name = "observatory - o"
+body_text = "You may Investigate each Odd numbered Region on this planet"
+
+[node name="Card Title" parent="Bleed/Border/Greater Vbox" index="0"]
+self_modulate = Color(0.160784, 0.501961, 0.72549, 1)
+text = "observatory - o"
+
+[node name="Cost Bar" parent="Bleed/Border/Greater Vbox" index="1"]
+visible = true
+
+[node name="@TextureRect@84602" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="1"]
+layout_mode = 2
+texture = ExtResource("2_sw56t")
+stretch_mode = 5
+
+[node name="Main Body" parent="Bleed/Border/Greater Vbox" index="2"]
+self_modulate = Color(0.160784, 0.501961, 0.72549, 1)
+
+[node name="Card Cost Spacer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="0"]
+visible = true
+
+[node name="@RichTextLabel@84604" type="RichTextLabel" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="1"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_7fih2")
+theme_override_fonts/bold_font = ExtResource("6_iieg3")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center]You may [b]Investigate[/b] each [b]Odd[/b] numbered [b]Region[/b] on this planet"
+fit_content = true
+autowrap_mode = 2
+
+[node name="@Control@84605" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="0"]
+layout_mode = 2
+size_flags_vertical = 3

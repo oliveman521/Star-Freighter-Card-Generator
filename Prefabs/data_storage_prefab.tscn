@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyu24w3s4i0vh"]
+
+[ext_resource type="Texture2D" uid="uid://cynpf1sh1y45n" path="res://Icons/Icons_Data Storage.png" id="1_4efi6"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="2_xbq8q"]
+
+[node name="Data Storage" type="HFlowContainer"]
+alignment = 1
+
+[node name="Data Socket Template" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_4efi6")
+stretch_mode = 2
+script = ExtResource("2_xbq8q")
+color_type = "Storage"
+
+[node name="_TextureRect_36930" type="TextureRect" parent="."]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_4efi6")
+stretch_mode = 2
+script = ExtResource("2_xbq8q")
+color_type = "Storage"
+
+[node name="_TextureRect_36931" type="TextureRect" parent="."]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_4efi6")
+stretch_mode = 2
+script = ExtResource("2_xbq8q")
+color_type = "Storage"
+
+[node name="_TextureRect_36932" type="TextureRect" parent="."]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_4efi6")
+stretch_mode = 2
+script = ExtResource("2_xbq8q")
+color_type = "Storage"
+
+[node name="_TextureRect_36933" type="TextureRect" parent="."]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_4efi6")
+stretch_mode = 2
+script = ExtResource("2_xbq8q")
+color_type = "Storage"
+
+[node name="_TextureRect_36934" type="TextureRect" parent="."]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_4efi6")
+stretch_mode = 2
+script = ExtResource("2_xbq8q")
+color_type = "Storage"
+
+[node name="_TextureRect_36935" type="TextureRect" parent="."]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_4efi6")
+stretch_mode = 2
+script = ExtResource("2_xbq8q")
+color_type = "Storage"
+
+[node name="_TextureRect_36936" type="TextureRect" parent="."]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_4efi6")
+stretch_mode = 2
+script = ExtResource("2_xbq8q")
+color_type = "Storage"

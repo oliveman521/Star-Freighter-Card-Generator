@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8i1f3bt24x3y"]
+
+[ext_resource type="PackedScene" uid="uid://bgd70vcoi4e85" path="res://card_prefab.tscn" id="1_38nj2"]
+[ext_resource type="Texture2D" uid="uid://bhgr4llswit36" path="res://Icons/Icons_Water.png" id="2_teiwy"]
+[ext_resource type="Texture2D" uid="uid://bfe41clyaq4lx" path="res://Icons/Icons_Iron.png" id="3_xgxke"]
+[ext_resource type="Texture2D" uid="uid://yxbfgpow7it4" path="res://Icons/Hex Grids/hex_grids_4.png" id="4_0uscp"]
+[ext_resource type="Texture2D" uid="uid://caoovnmdwe87a" path="res://Icons/Icons_Titatnium.png" id="4_7c138"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="5_ar80u"]
+[ext_resource type="Texture2D" uid="uid://ciefqrej61f4j" path="res://Icons/Hex Grids/hex_grids_7.png" id="6_dsqvw"]
+
+[node name="Card Prefab" instance=ExtResource("1_38nj2")]
+card_type = "Housing"
+cost = "1H2O 1Fe 1Ti"
+card_name = "adv. colony"
+body_text = "C:4
+-TF-
+C:7"
+
+[node name="Card Title" parent="Bleed/Border/Greater Vbox" index="0"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+text = "adv. colony"
+
+[node name="Cost Bar" parent="Bleed/Border/Greater Vbox" index="1"]
+visible = true
+
+[node name="@TextureRect@81932" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="1"]
+layout_mode = 2
+texture = ExtResource("2_teiwy")
+stretch_mode = 5
+
+[node name="@TextureRect@81933" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="2"]
+layout_mode = 2
+texture = ExtResource("3_xgxke")
+stretch_mode = 5
+
+[node name="@TextureRect@81934" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="3"]
+layout_mode = 2
+texture = ExtResource("4_7c138")
+stretch_mode = 5
+
+[node name="Main Body" parent="Bleed/Border/Greater Vbox" index="2"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+
+[node name="Card Cost Spacer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="0"]
+visible = true
+
+[node name="Colonist Grid" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="1"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+texture = ExtResource("4_0uscp")
+stretch_mode = 3
+script = ExtResource("5_ar80u")
+color_type = "Housing"
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="2" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Terraform Label" parent="Bleed/Border/Greater Vbox" index="3"]
+visible = true
+
+[node name="Box2" parent="Bleed/Border/Greater Vbox/Terraform Label" index="0"]
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+
+[node name="Terraform Body" parent="Bleed/Border/Greater Vbox" index="4"]
+visible = true
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="0" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Colonist Grid" type="TextureRect" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="1"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+texture = ExtResource("6_dsqvw")
+stretch_mode = 3
+script = ExtResource("5_ar80u")
+color_type = "Housing"
+
+[node name="@Control@81935" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="2" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3

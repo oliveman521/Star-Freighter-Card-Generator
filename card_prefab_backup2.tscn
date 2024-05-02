@@ -1,0 +1,292 @@
+[gd_scene load_steps=19 format=3 uid="uid://dxg2q1okkf7v"]
+
+[ext_resource type="Script" path="res://Card.gd" id="1_mi244"]
+[ext_resource type="FontVariation" uid="uid://d1umfehkfuhas" path="res://Fonts/Rift/Title Font Adjusted.tres" id="2_44kna"]
+[ext_resource type="Texture2D" uid="uid://b3ajebqveod3r" path="res://Smaller 9 Patch.svg" id="3_u3e3h"]
+[ext_resource type="Texture2D" uid="uid://benwno8ndlopv" path="res://Icons/Icons_Iron.png" id="4_38o5m"]
+[ext_resource type="Texture2D" uid="uid://bouaueam4gbpp" path="res://Icons/Icons_Uranimum.png" id="5_iocq4"]
+[ext_resource type="Texture2D" uid="uid://caoovnmdwe87a" path="res://Icons/Icons_Titatnium.png" id="6_p548y"]
+[ext_resource type="Texture2D" uid="uid://b0e7513382c2x" path="res://Card Body 9 Patch.svg" id="7_n5w3y"]
+[ext_resource type="PackedScene" uid="uid://ofksefnmwjxu" path="res://Prefabs/Spacer.tscn" id="8_sdbri"]
+[ext_resource type="PackedScene" uid="uid://cxshsmcjyyfy5" path="res://Prefabs/body_text_prefab.tscn" id="9_p8sdm"]
+[ext_resource type="FontFile" uid="uid://cmqbuj73nhx8q" path="res://Fonts/Tiresias/Tiresias_Infofont.ttf" id="10_w4vw6"]
+[ext_resource type="PackedScene" uid="uid://dkv74n22ugpc8" path="res://Prefabs/repeating_effect_prefab.tscn" id="11_pu8a8"]
+[ext_resource type="PackedScene" uid="uid://cf8n18n506nwp" path="res://Prefabs/data_storage_prefab.tscn" id="12_3b27a"]
+[ext_resource type="Texture2D" uid="uid://ccmvnwdnxr7av" path="res://Outline 9 Patch.svg" id="13_s8011"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="14_lemvp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_urmv0"]
+font = ExtResource("2_44kna")
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_8nr6v"]
+font = ExtResource("10_w4vw6")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c7ets"]
+font = ExtResource("2_44kna")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hvmhd"]
+font = ExtResource("10_w4vw6")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[node name="Card Prefab" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 680.0
+offset_bottom = 1130.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_mi244")
+card_type = "RP"
+cost = "1Fe 1U 1Ti"
+card_name = "Research Station"
+body_text = "You may investigate this region, and its 2 neighbors
+RPT: Generate 2
+D:1"
+
+[node name="Bleed Color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.117647, 1)
+
+[node name="Bleed" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Border Color" type="ColorRect" parent="Bleed"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Border" type="MarginContainer" parent="Bleed"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Greater Vbox" type="VBoxContainer" parent="Bleed/Border"]
+layout_mode = 2
+
+[node name="Card Title" type="Label" parent="Bleed/Border/Greater Vbox"]
+unique_name_in_owner = true
+self_modulate = Color(0.160784, 0.501961, 0.72549, 1)
+layout_mode = 2
+text = "Research Station"
+label_settings = SubResource("LabelSettings_urmv0")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Cost Bar" type="MarginContainer" parent="Bleed/Border/Greater Vbox"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_bottom = -70
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bleed/Border/Greater Vbox/Cost Bar"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("3_u3e3h")
+region_rect = Rect2(0, 100, 756, 656)
+patch_margin_left = 50
+patch_margin_right = 50
+patch_margin_bottom = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="Bleed/Border/Greater Vbox/Cost Bar"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="Cost Container" type="HBoxContainer" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="Cost Icon Template" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = ExtResource("4_38o5m")
+stretch_mode = 5
+
+[node name="@TextureRect@29520" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("4_38o5m")
+stretch_mode = 5
+
+[node name="@TextureRect@29521" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("5_iocq4")
+stretch_mode = 5
+
+[node name="@TextureRect@29522" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("6_p548y")
+stretch_mode = 5
+
+[node name="Main Body" type="NinePatchRect" parent="Bleed/Border/Greater Vbox"]
+unique_name_in_owner = true
+self_modulate = Color(0.160784, 0.501961, 0.72549, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_n5w3y")
+region_rect = Rect2(0, 0, 750, 753.827)
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="MarginContainer" type="MarginContainer" parent="Bleed/Border/Greater Vbox/Main Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Body VBox" type="VBoxContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="Card Cost Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" groups=["Do Not Delete"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" instance=ExtResource("8_sdbri")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="@Label@29523" type="Label" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" instance=ExtResource("9_p8sdm")]
+layout_mode = 2
+text = "You may investigate this region, and its 2 neighbors"
+label_settings = SubResource("LabelSettings_8nr6v")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="@Control@29524" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" instance=ExtResource("8_sdbri")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Repeating Effect Template" type="HBoxContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" instance=ExtResource("11_pu8a8")]
+layout_mode = 2
+alignment = 2
+
+[node name="@Control@29525" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" instance=ExtResource("8_sdbri")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Data Storage" type="HFlowContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" instance=ExtResource("12_3b27a")]
+layout_mode = 2
+alignment = 1
+
+[node name="@Control@29527" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" instance=ExtResource("8_sdbri")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Terraform Label" type="MarginContainer" parent="Bleed/Border/Greater Vbox"]
+visible = false
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="Box2" type="NinePatchRect" parent="Bleed/Border/Greater Vbox/Terraform Label"]
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+layout_mode = 2
+texture = ExtResource("13_s8011")
+region_rect = Rect2(0, 0, 756, 756)
+patch_margin_left = 54
+patch_margin_top = 53
+patch_margin_right = 53
+patch_margin_bottom = 53
+script = ExtResource("14_lemvp")
+
+[node name="Text Margin" type="MarginContainer" parent="Bleed/Border/Greater Vbox/Terraform Label"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 10
+
+[node name="Text" type="Label" parent="Bleed/Border/Greater Vbox/Terraform Label/Text Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Terraformed"
+label_settings = SubResource("LabelSettings_c7ets")
+horizontal_alignment = 1
+
+[node name="Terraform Body" type="NinePatchRect" parent="Bleed/Border/Greater Vbox"]
+visible = false
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_n5w3y")
+region_rect = Rect2(0, 0, 750, 753.827)
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+script = ExtResource("14_lemvp")
+
+[node name="Body Margin" type="MarginContainer" parent="Bleed/Border/Greater Vbox/Terraform Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="Spacer2" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Body Text" type="Label" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/VBoxContainer"]
+layout_mode = 2
+text = "Body Text"
+label_settings = SubResource("LabelSettings_hvmhd")
+horizontal_alignment = 1
+
+[node name="Spacer3" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3

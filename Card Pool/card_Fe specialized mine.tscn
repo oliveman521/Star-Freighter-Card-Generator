@@ -1,0 +1,152 @@
+[gd_scene load_steps=11 format=3 uid="uid://cq4x57squge13"]
+
+[ext_resource type="PackedScene" uid="uid://bgd70vcoi4e85" path="res://card_prefab.tscn" id="1_p4i1x"]
+[ext_resource type="Texture2D" uid="uid://bfe41clyaq4lx" path="res://Icons/Icons_Iron.png" id="2_pj8sd"]
+[ext_resource type="Texture2D" uid="uid://caoovnmdwe87a" path="res://Icons/Icons_Titatnium.png" id="3_s3no8"]
+[ext_resource type="Texture2D" uid="uid://bnrhjoq5agtr1" path="res://Icons/repeat.svg" id="4_4p3h2"]
+[ext_resource type="Texture2D" uid="uid://ccmvnwdnxr7av" path="res://Outline 9 Patch.svg" id="5_yui00"]
+[ext_resource type="FontFile" uid="uid://cmqbuj73nhx8q" path="res://Fonts/Tiresias/Tiresias_Infofont.ttf" id="6_ja8a2"]
+[ext_resource type="FontFile" uid="uid://dikxwdtbbyk7x" path="res://Fonts/Tiresias/Tiresias Signfont Bold.TTF" id="7_s7jx0"]
+[ext_resource type="Texture2D" uid="uid://clc6vraoav2hj" path="res://Icons/Icons_x1 Materials.png" id="8_37jkl"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="9_k87hc"]
+[ext_resource type="Texture2D" uid="uid://cryf7efoyuuvf" path="res://Icons/Icons_x5 Materials.png" id="10_tt26a"]
+
+[node name="Card Prefab" instance=ExtResource("1_p4i1x")]
+card_type = "Mine"
+cost = "3Fe 1Ti"
+card_name = "Fe specialized mine"
+body_text = "RPT: If this Region     is 1Fe, Mine 4Fe
+M:5"
+
+[node name="Card Title" parent="Bleed/Border/Greater Vbox" index="0"]
+self_modulate = Color(0.901961, 0.494118, 0.133333, 1)
+text = "Fe specialized mine"
+
+[node name="Cost Bar" parent="Bleed/Border/Greater Vbox" index="1"]
+visible = true
+
+[node name="@TextureRect@74800" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="1"]
+layout_mode = 2
+texture = ExtResource("2_pj8sd")
+stretch_mode = 5
+
+[node name="@TextureRect@74801" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="2"]
+layout_mode = 2
+texture = ExtResource("2_pj8sd")
+stretch_mode = 5
+
+[node name="@TextureRect@74802" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="3"]
+layout_mode = 2
+texture = ExtResource("2_pj8sd")
+stretch_mode = 5
+
+[node name="@TextureRect@74803" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="4"]
+layout_mode = 2
+texture = ExtResource("3_s3no8")
+stretch_mode = 5
+
+[node name="Main Body" parent="Bleed/Border/Greater Vbox" index="2"]
+self_modulate = Color(0.901961, 0.494118, 0.133333, 1)
+
+[node name="Card Cost Spacer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="0"]
+visible = true
+
+[node name="@HBoxContainer@74805" type="HBoxContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="1"]
+layout_mode = 2
+alignment = 2
+
+[node name="Repeating Effect Icon" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/@HBoxContainer@74805" index="0"]
+unique_name_in_owner = true
+z_index = 20
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+texture = ExtResource("4_4p3h2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/@HBoxContainer@74805" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = -70
+
+[node name="Repeating Effect Box" type="NinePatchRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/@HBoxContainer@74805/MarginContainer" index="0"]
+unique_name_in_owner = true
+self_modulate = Color(0.901961, 0.494118, 0.133333, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_yui00")
+region_rect = Rect2(0, 0, 756, 756)
+patch_margin_left = 66
+patch_margin_top = 66
+patch_margin_right = 61
+patch_margin_bottom = 64
+
+[node name="Text Margin" type="MarginContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/@HBoxContainer@74805/MarginContainer" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/@HBoxContainer@74805/MarginContainer/Text Margin" index="0"]
+layout_mode = 2
+alignment = 1
+
+[node name="Repeating Effect Text" type="RichTextLabel" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/@HBoxContainer@74805/MarginContainer/Text Margin/VBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_ja8a2")
+theme_override_fonts/bold_font = ExtResource("7_s7jx0")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center] If this [b]Region[/b]     is [img]res://Icons/Icons_Iron.png[/img], [b]Mine[/b] [img]res://Icons/Icons_Iron.png[/img][img]res://Icons/Icons_Iron.png[/img][img]res://Icons/Icons_Iron.png[/img][img]res://Icons/Icons_Iron.png[/img]"
+fit_content = true
+autowrap_mode = 2
+
+[node name="@Control@74806" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="2" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="@Control@74808" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="3"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+
+[node name="Material Socket Container" type="HFlowContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/@Control@74808" index="0"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -559.0
+offset_right = 560.0
+offset_bottom = 484.0
+grow_horizontal = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Material Socket Template" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/@Control@74808/Material Socket Container" index="0"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("8_37jkl")
+stretch_mode = 2
+script = ExtResource("9_k87hc")
+color_type = "Storage"
+
+[node name="@TextureRect@74807" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/@Control@74808/Material Socket Container" index="1"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("10_tt26a")
+stretch_mode = 2
+script = ExtResource("9_k87hc")
+color_type = "Storage"
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="0" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3

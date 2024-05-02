@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkv74n22ugpc8"]
+
+[ext_resource type="Texture2D" uid="uid://bnrhjoq5agtr1" path="res://Icons/repeat.svg" id="1_j88ke"]
+[ext_resource type="Texture2D" uid="uid://ccmvnwdnxr7av" path="res://Outline 9 Patch.svg" id="2_i78ng"]
+[ext_resource type="PackedScene" uid="uid://cxshsmcjyyfy5" path="res://Prefabs/body_text_prefab.tscn" id="3_8aw81"]
+
+[node name="Repeating Effect Template" type="HBoxContainer"]
+offset_right = 552.0
+offset_bottom = 130.0
+alignment = 2
+
+[node name="Repeating Effect Icon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+z_index = 20
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+texture = ExtResource("1_j88ke")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = -70
+
+[node name="Repeating Effect Box" type="NinePatchRect" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_i78ng")
+region_rect = Rect2(0, 0, 756, 756)
+patch_margin_left = 66
+patch_margin_top = 66
+patch_margin_right = 61
+patch_margin_bottom = 64
+
+[node name="Text Margin" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Text Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="Repeating Effect Text" parent="MarginContainer/Text Margin/VBoxContainer" instance=ExtResource("3_8aw81")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Body [b]Text[\\b]"

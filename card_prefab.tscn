@@ -1,0 +1,219 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgd70vcoi4e85"]
+
+[ext_resource type="Script" path="res://Card.gd" id="1_31gp6"]
+[ext_resource type="FontVariation" uid="uid://d1umfehkfuhas" path="res://Fonts/Rift/Title Font Adjusted.tres" id="2_jgy6c"]
+[ext_resource type="Texture2D" uid="uid://b0e7513382c2x" path="res://Card Body 9 Patch.svg" id="3_ygyou"]
+[ext_resource type="Texture2D" uid="uid://b3ajebqveod3r" path="res://Smaller 9 Patch.svg" id="4_qsjiw"]
+[ext_resource type="Texture2D" uid="uid://ccmvnwdnxr7av" path="res://Outline 9 Patch.svg" id="8_lv6ak"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="12_pxquh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_urmv0"]
+font = ExtResource("2_jgy6c")
+font_size = 80
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_43i3e"]
+load_path = "res://.godot/imported/Icons_Iron.png-ccfbd7f1ae6effc3d10e55d81eabcf2d.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_c7ets"]
+font = ExtResource("2_jgy6c")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[node name="Card Prefab" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 606.0
+offset_bottom = 1056.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_31gp6")
+cost = ""
+card_name = "prefab"
+body_text = ""
+
+[node name="Bleed Color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.117647, 1)
+
+[node name="Bleed" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Border Color" type="ColorRect" parent="Bleed"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Border" type="MarginContainer" parent="Bleed"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Greater Vbox" type="VBoxContainer" parent="Bleed/Border"]
+layout_mode = 2
+
+[node name="Card Title" type="Label" parent="Bleed/Border/Greater Vbox"]
+unique_name_in_owner = true
+self_modulate = Color(0.905882, 0.298039, 0.235294, 1)
+layout_mode = 2
+text = "prefab"
+label_settings = SubResource("LabelSettings_urmv0")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Cost Bar" type="MarginContainer" parent="Bleed/Border/Greater Vbox"]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_bottom = -70
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bleed/Border/Greater Vbox/Cost Bar"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("4_qsjiw")
+region_rect = Rect2(0, 100, 756, 656)
+patch_margin_left = 50
+patch_margin_right = 50
+patch_margin_bottom = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="Bleed/Border/Greater Vbox/Cost Bar"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="Cost Container" type="HBoxContainer" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="Cost Icon Template" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_43i3e")
+stretch_mode = 5
+
+[node name="Main Body" type="NinePatchRect" parent="Bleed/Border/Greater Vbox"]
+unique_name_in_owner = true
+self_modulate = Color(0.905882, 0.298039, 0.235294, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_ygyou")
+region_rect = Rect2(0, 0, 750, 753.827)
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="MarginContainer" type="MarginContainer" parent="Bleed/Border/Greater Vbox/Main Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Body VBox" type="VBoxContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="Card Cost Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" groups=["Do Not Delete", "Spacer"]]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Terraform Label" type="MarginContainer" parent="Bleed/Border/Greater Vbox"]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="Box2" type="NinePatchRect" parent="Bleed/Border/Greater Vbox/Terraform Label"]
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+layout_mode = 2
+texture = ExtResource("8_lv6ak")
+region_rect = Rect2(0, 0, 756, 756)
+patch_margin_left = 54
+patch_margin_top = 53
+patch_margin_right = 53
+patch_margin_bottom = 53
+script = ExtResource("12_pxquh")
+color_type = "Terra"
+
+[node name="Text Margin" type="MarginContainer" parent="Bleed/Border/Greater Vbox/Terraform Label"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 10
+
+[node name="Text" type="Label" parent="Bleed/Border/Greater Vbox/Terraform Label/Text Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Terraformed"
+label_settings = SubResource("LabelSettings_c7ets")
+horizontal_alignment = 1
+
+[node name="Terraform Body" type="NinePatchRect" parent="Bleed/Border/Greater Vbox"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_ygyou")
+region_rect = Rect2(0, 0, 750, 753.827)
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+script = ExtResource("12_pxquh")
+color_type = "Terra"
+
+[node name="Body Margin" type="MarginContainer" parent="Bleed/Border/Greater Vbox/Terraform Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Terraform VBox" type="VBoxContainer" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1

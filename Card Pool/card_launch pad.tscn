@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgcuhfu0xm4wb"]
+
+[ext_resource type="PackedScene" uid="uid://bgd70vcoi4e85" path="res://card_prefab.tscn" id="1_pewml"]
+[ext_resource type="Texture2D" uid="uid://bfe41clyaq4lx" path="res://Icons/Icons_Iron.png" id="2_pky56"]
+[ext_resource type="Texture2D" uid="uid://bouaueam4gbpp" path="res://Icons/Icons_Uranimum.png" id="3_c2foa"]
+[ext_resource type="FontFile" uid="uid://cmqbuj73nhx8q" path="res://Fonts/Tiresias/Tiresias_Infofont.ttf" id="3_xuyf7"]
+[ext_resource type="FontFile" uid="uid://dikxwdtbbyk7x" path="res://Fonts/Tiresias/Tiresias Signfont Bold.TTF" id="4_o6su4"]
+
+[node name="Card Prefab" instance=ExtResource("1_pewml")]
+card_type = "Energy"
+cost = "1Fe 2U"
+card_name = "launch pad"
+body_text = "Taking Off from this planet does not use Energy"
+
+[node name="Card Title" parent="Bleed/Border/Greater Vbox" index="0"]
+self_modulate = Color(0.945098, 0.768627, 0.0588235, 1)
+text = "launch pad"
+
+[node name="Cost Bar" parent="Bleed/Border/Greater Vbox" index="1"]
+visible = true
+
+[node name="@TextureRect@102301" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="1"]
+layout_mode = 2
+texture = ExtResource("2_pky56")
+stretch_mode = 5
+
+[node name="@TextureRect@102302" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="2"]
+layout_mode = 2
+texture = ExtResource("3_c2foa")
+stretch_mode = 5
+
+[node name="@TextureRect@102303" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="3"]
+layout_mode = 2
+texture = ExtResource("3_c2foa")
+stretch_mode = 5
+
+[node name="Main Body" parent="Bleed/Border/Greater Vbox" index="2"]
+self_modulate = Color(0.945098, 0.768627, 0.0588235, 1)
+
+[node name="Card Cost Spacer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="0"]
+visible = true
+
+[node name="Body Text" type="RichTextLabel" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="1"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_xuyf7")
+theme_override_fonts/bold_font = ExtResource("4_o6su4")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center][b]Taking Off[/b] from this planet does not use [b]Energy[/b]"
+fit_content = true
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="0"]
+layout_mode = 2
+size_flags_vertical = 3

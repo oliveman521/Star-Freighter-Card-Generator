@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxshsmcjyyfy5"]
+
+[ext_resource type="FontFile" uid="uid://cmqbuj73nhx8q" path="res://Fonts/Tiresias/Tiresias_Infofont.ttf" id="1_tj2fc"]
+[ext_resource type="FontFile" uid="uid://dikxwdtbbyk7x" path="res://Fonts/Tiresias/Tiresias Signfont Bold.TTF" id="2_spwvg"]
+
+[node name="Body Text" type="RichTextLabel"]
+offset_right = 269.0
+offset_bottom = 56.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_tj2fc")
+theme_override_fonts/bold_font = ExtResource("2_spwvg")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "Body [b]Text"
+fit_content = true
+autowrap_mode = 2

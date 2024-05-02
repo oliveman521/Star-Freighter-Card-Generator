@@ -1,0 +1,171 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxf3aorgotehh"]
+
+[ext_resource type="PackedScene" uid="uid://bgd70vcoi4e85" path="res://card_prefab.tscn" id="1_smmvg"]
+[ext_resource type="Texture2D" uid="uid://crj02amyx1rkr" path="res://Icons/Icons_Data.png" id="2_bfs1c"]
+[ext_resource type="FontFile" uid="uid://cmqbuj73nhx8q" path="res://Fonts/Tiresias/Tiresias_Infofont.ttf" id="3_274sx"]
+[ext_resource type="Texture2D" uid="uid://caoovnmdwe87a" path="res://Icons/Icons_Titatnium.png" id="3_auxx3"]
+[ext_resource type="FontFile" uid="uid://dikxwdtbbyk7x" path="res://Fonts/Tiresias/Tiresias Signfont Bold.TTF" id="4_jkgco"]
+[ext_resource type="Texture2D" uid="uid://bnrhjoq5agtr1" path="res://Icons/repeat.svg" id="5_xfvqx"]
+[ext_resource type="Texture2D" uid="uid://ccmvnwdnxr7av" path="res://Outline 9 Patch.svg" id="6_hrmto"]
+[ext_resource type="Texture2D" uid="uid://cynpf1sh1y45n" path="res://Icons/Icons_Data Storage.png" id="7_7io2k"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="8_0cfd0"]
+
+[node name="Card Prefab" instance=ExtResource("1_smmvg")]
+card_type = "RP"
+cost = "2RP 1Ti"
+card_name = "adv. research station"
+body_text = "You may Investigate this Region and its neighbors
+RPT: Generate 1RP equal to the Tier of this planet
+D:3"
+
+[node name="Card Title" parent="Bleed/Border/Greater Vbox" index="0"]
+self_modulate = Color(0.160784, 0.501961, 0.72549, 1)
+text = "adv. research station"
+
+[node name="Cost Bar" parent="Bleed/Border/Greater Vbox" index="1"]
+visible = true
+
+[node name="@TextureRect@83907" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="1"]
+layout_mode = 2
+texture = ExtResource("2_bfs1c")
+stretch_mode = 5
+
+[node name="@TextureRect@83908" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="2"]
+layout_mode = 2
+texture = ExtResource("2_bfs1c")
+stretch_mode = 5
+
+[node name="@TextureRect@83909" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="3"]
+layout_mode = 2
+texture = ExtResource("3_auxx3")
+stretch_mode = 5
+
+[node name="Main Body" parent="Bleed/Border/Greater Vbox" index="2"]
+self_modulate = Color(0.160784, 0.501961, 0.72549, 1)
+
+[node name="Card Cost Spacer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="0"]
+visible = true
+
+[node name="Body Text" type="RichTextLabel" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="1"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_274sx")
+theme_override_fonts/bold_font = ExtResource("4_jkgco")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center]You may [b]Investigate[/b] this [b]Region[/b] and its neighbors"
+fit_content = true
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="2" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Repeating Effect Template" type="HBoxContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="3"]
+layout_mode = 2
+alignment = 2
+
+[node name="Repeating Effect Icon" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Repeating Effect Template" index="0"]
+unique_name_in_owner = true
+z_index = 20
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+texture = ExtResource("5_xfvqx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Repeating Effect Template" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = -70
+
+[node name="Repeating Effect Box" type="NinePatchRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Repeating Effect Template/MarginContainer" index="0"]
+unique_name_in_owner = true
+self_modulate = Color(0.160784, 0.501961, 0.72549, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("6_hrmto")
+region_rect = Rect2(0, 0, 756, 756)
+patch_margin_left = 66
+patch_margin_top = 66
+patch_margin_right = 61
+patch_margin_bottom = 64
+
+[node name="Text Margin" type="MarginContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Repeating Effect Template/MarginContainer" index="1"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Repeating Effect Template/MarginContainer/Text Margin" index="0"]
+layout_mode = 2
+alignment = 1
+
+[node name="Repeating Effect Text" type="RichTextLabel" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Repeating Effect Template/MarginContainer/Text Margin/VBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_274sx")
+theme_override_fonts/bold_font = ExtResource("4_jkgco")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center] [b]Generate[/b] [img]res://Icons/Icons_Data.png[/img] equal to the Tier of this planet"
+fit_content = true
+autowrap_mode = 2
+
+[node name="@Control@83912" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="4" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Data Storage" type="HFlowContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="5"]
+layout_mode = 2
+alignment = 1
+
+[node name="Data Socket Template" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="0"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_7io2k")
+stretch_mode = 2
+script = ExtResource("8_0cfd0")
+color_type = "Storage"
+
+[node name="@TextureRect@83913" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="1"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_7io2k")
+stretch_mode = 2
+script = ExtResource("8_0cfd0")
+color_type = "Storage"
+
+[node name="@TextureRect@83914" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="2"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_7io2k")
+stretch_mode = 2
+script = ExtResource("8_0cfd0")
+color_type = "Storage"
+
+[node name="@TextureRect@83915" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="3"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_7io2k")
+stretch_mode = 2
+script = ExtResource("8_0cfd0")
+color_type = "Storage"
+
+[node name="@Control@83916" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="6" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="0" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3

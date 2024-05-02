@@ -1,0 +1,87 @@
+Name,Type,Count,Build cost,Effect,Storage
+U-Reactor,Energy,2,1H2O 2Fe 1Ti ,You may spend U to gain 2 energy,M:2
+Adv. U-Reactor,Energy,2,1H2O 3Fe 2Ti,You may spend a uranium to gain 3 energy,M:2
+U-Singularity,Energy,1,7U 7H2O 2Ti,"Once per cycle, completely refill your energy",
+Hydropower Facility,Energy,1,3Fe 3Ti 3H2O,"May only be built on a terraformed planet. Once per cycle, completely refill your energy",
+Steam Plant,Energy,2,3Fe 1H2O,You may spend 3 water to generate 1 energy.,M:5
+Launch Pad,Energy,3,2Fe,Taking off from this planet does not use energy,
+Haley,Energy,1,2Fe 1Ti 2U,"When built, you may immediately move the planet you are on to any flat surface within a stride of its initial location (pick it up, and without lifting your feet set it down again)
+Cannot be salvaged",
+Warpgate,Energy,2,1Ti 1U 1Au ,"When you draw this card, search the deck for another card called ""Warpgate"". You may spend 1 energy to move their ship directly from one planet with a warpgate to another.",
+U Waste Recycler,Energy,3,1Ti,"Anytime someone would spend a Uranium on this planet, instead put that uranium on these slots if there is space. xM:2 at the end of each cycle, move any U in the top two slots down into storage ",M:2
+Adv. Colony,Housing,6,1Fe 1H2O 1Ti,,C:5/5
+Space City,Housing,2,2Fe 1H2O 1Ti,,C:5/15
+Water City,Housing,2,1Fe,May only be built on a planet with an ocean.,C:3/5
+Capital City,Housing,1,4Fe 4Ti,Each Colonist on this planet will score double.,C:0/20
+Emergency Shelter,Housing,2,,,C:2/3
+Subterranean Housing,Housing,2,1H2O 1Fe,"To build, place on top of an orange building you own. That building is now considered to be out of play. ",C:5/5
+Recreation Center,Housing,1,1H2O 1Fe 1Ti,Each colonist in the buildings to the left and right of this one are worth an additional VP,
+Cryo-Stasis Facility,Housing,1,1Fe 1H2O,Refugees on this space are worth 1 fewer VP.,C:15
+Observatory,Investigate,2,1Fe 1Ti,You may Investigate each odd<even> region on this planet,
+Planetary Telescope,Investigate,3,1Fe,You may spend a research point to investigate any region on this planet,
+Inter-Planetary Telescope,Investigate,2,1Fe 1Ti,You may spend a research point to investigate any region on any planet,
+Adv. Mine,Mine,6,2Fe 1Ti,"RPT: Each cycle, generate 2 resources from its region",M:2
+Quarry,Mine,2,3Fe 2Ti,"RPT: Each cycle, generate 1 resources from its region
+RPT: Each cycle, generate 1 resources from its region
+RPT: Each cycle, generate 1 resources from its region",M:3
+Strip Mine,Mine,2,3Fe 1Ti,"At the end of the cycle, generate 5 materials from this region, and then remove this region’s material token from play",M:5
+Frac Mine,Mine,2,3Fe 1Ti,"RPT: Each Cycle, generate 1 resource from the region to the left
+RPT: Each Cycle, generate 1 resource from the region to the right",
+Manufactury,Mine,2,4Fe 1H2O,"Each cycle, for every 2Fe stored on this card, remove them to Generate 1Ti",
+Fe Specialized Mine,Mine,2,3Fe 1Ti,"If the region this building is on is iron, each cycle gain 4 iron",
+H20 Pump,Mine,2,2Fe 1Ti 1H2O,"If the region this building is on is Water, each cycle gain 5 Water",
+Ti Specialized Mine,Mine,2,2Fe 4Ti ,"if the region this building is on is Titanium, each cycle gain 3 Titanium",
+U Specialized Mine,Mine,2,3Fe 2Ti 1H2O,"if the region this building is on is Uranium, each cycle gain 3 Uranium ",
+Au Specialized Mine,Mine,1,3Fe 3Ti,"if the region this building is on is Gold, each cycle gain 4 Gold",
+Ore Processor,Mine,3,1Fe 1Ti,"Whenever an adjacent Orange Building generates Materials, Generate 1 of that Material",M:2
+Unregulated Mine,Mine,2,2Fe,"RPT: Each cycle, If there are no blue buildings on this planet, Generate 1 material from this region
+RPT: Each cycle, If there are no blue buildings on this planet, Generate 1 material from this region",M:2
+Mining Outpost,Mine,4,2Fe,"RPT: Each Cycle, Generate 1 material from this region
+RPT: Each Cycle, Generate 1 material from this region",M:4
+Byproduct Processing Facility,Mine,3,4Fe 2Ti,"RPT: Each Cycle, Generate 1 Fe for each Orange Building on this planet",
+Ragnarok,Mine,1,4Fe 3Ti,"When built, put your ownership marker on the first slot. Each round, after performing this building's ability, advance your marker one slot.
+Generate 5 materials from this region
+Generate 1 material from each region in order.
+Destroy This Planet.",M:10
+Space Station,Other,1,2Fe 2Ti,"Do not build on a planet, instead, place this card on any flat surface. It is now a planet.",4 Card Slots
+Trading Post,Other,2,3Au,"For each player that has built on this planet, you gain 3VP, and each other player who has built on this player gains 2VP",
+Embassy,Other,5,1Fe 1Ti,"RPT: Each cycle, if there is another player's building to the left, Generate 1 Gold
+RPT: Each cycle, if there is another player's building to the right, Generate 1 Gold",M:5
+Bullet Train,Other,1,1U,"As long as there is at least 1 refugee on this planet, all buildings here are considered staffed. (this does not affect scoring)",
+Embassy,Other,2,1Fe 1Au,"If another player has buildings on more than half the spaces on this planet, that player gains 3VP. Otherwise, do not score refugees on this building",C:7
+Atomic Fabricator,Other,1,2Fe 2Ti,"Put your ownership marker on one of these spaces: H2O, Fe, Ti, U, Au. You may move the marker anytime you are at this planet.
+RPT: Each Cycle, Generate 1 material of the marked type",M:1
+Adv. Research Station,RP,6,1Fe 1Ti,"You may investigate the two regions directly to it's left and the two to it's right.
+RPT: Each cycle, generate 1 research point.
+RPT: Each cycle, generate 1 research point.",D:2
+Laboratory,RP,3,2Fe 1Ti,"RPT: Each cycle, generate 3 research points.",D:6
+University,RP,2,1Fe 1Ti 1H2O,"RPT: Each cycle, Generate 1 research point, if planet is terraformed generate 3 & you may investigate the planet secret",D:4
+Analytics Lab,RP,3,2Fe 1Ti,"Each Cycle, Generate 1 Research for each Blue Building on this planet (you do not have to own the building)",
+Laboratory Outpost,RP,4,1Fe,"RPT: Each cycle, if this is the only building on this planet, Generate 1 Research Point
+RPT: Each cycle, if this is the only building on this planet, Generate 1 Research Point
+RPT: Each cycle, if this is the only building on this planet, Generate 1 Research Point",D:6
+Bio-Study Lab,RP,2,1H2O 1Fe 1Ti,"Each cycle, Generate 1 RP for each terra on this planet",
+Solar System Scientific Conference Center,RP,1,2Fe 2Ti,Each RP stored on this planet is worth an additional VP to its owner,D:4
+Regulatory Office,RP,1,1Fe 1Ti,"As long as there is at least 1 refugee on this planet, all buildings here are considered staffed. (this does not effect scoring)",D:4
+Mineral Lab,RP,1,2Fe 1Ti,"RPT: Each Cycle, Generate 1 Research Point for each different material stored here",
+Adv. Warehouse,Storage,4,1Fe 1Ti,,M:5 D:8
+Sample Containment,Storage,2,2Fe,,D:12
+Data Bank,Storage,1,4Fe 1Ti,,D:20
+Artificial Basin,Storage,1,1Fe,Can only store water,M:20
+Storage Add-on,Storage,2,1Fe,Add onto any building,M:2
+Storage Barge,Storage,2,3Fe,Must be built next to an ocean.,M:15
+Lightweight Storage,Storage,3,,,M:2 D:2
+Material Warehouse,Storage,2,4Fe,,M:15
+Galactic Reserve,Storage,1,,"At the end of the game, if this building is full of gold, you gain 5 VP",M:15
+High-Rise,Storage,2,1Fe 1H2O,Up to two other buildings can be built on this space.,C:3
+Ocean,Terra,6,1Fe 1H2O,Each water stored counts as 1 Terra. Can only store water. You cannot remove water from the reservoir.,M:5
+Arboretum,Terra,3,1H2O 1Fe,2 Terra,
+Plankton Breeder,Terra,2,1H2O,May only be built on a planet with an ocean. 3 Terra,
+Crustacean Breeder,Terra,2,1Fe 1H2O,May only be built on a planet with an ocean. 5 Terra,
+Farm,Terra,2,2Fe 3H2O,3 Terra,C:0/5
+Litmus Bacteria,Terra,2,2H2O 1Fe,2 Terra. Terraformed: you may investigate this planet's planet secret.,
+Eco Lab,Terra,2,1H2O 1Fe,"2 Terra. RPT: Each Cycle, Generate 1 Research Point",D:1
+Eco Mine,Terra,2,1H2O 2Fe,"1 Terra. Each cycle, Generate 1 material from this region.",M:1
+Adaptive Lake,Terra,1,2H2O,"To build, place on top of an orange building you own. That building is now considered to be out of play. 3 Terra.",
+Greenhouse,Terra,4,,1 Terra.,C:0/3
+Rooftop Garden,Terra,2,1H2O,Add onto any non-green building. 1 Terra.,

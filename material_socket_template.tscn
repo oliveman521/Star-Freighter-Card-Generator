@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://p05afwf6j1a5"]
+
+[ext_resource type="Texture2D" uid="uid://clc6vraoav2hj" path="res://Icons/Icons_x1 Materials.png" id="1_v06vg"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="2_vsr2w"]
+
+[node name="Material Socket Template" type="TextureRect"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+size_flags_vertical = 3
+texture = ExtResource("1_v06vg")
+stretch_mode = 2
+script = ExtResource("2_vsr2w")
+color_type = "Storage"

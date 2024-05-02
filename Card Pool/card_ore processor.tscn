@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://d31rypg4jlntb"]
+
+[ext_resource type="PackedScene" uid="uid://bgd70vcoi4e85" path="res://card_prefab.tscn" id="1_n1s3u"]
+[ext_resource type="Texture2D" uid="uid://bfe41clyaq4lx" path="res://Icons/Icons_Iron.png" id="2_8tl0c"]
+[ext_resource type="Texture2D" uid="uid://caoovnmdwe87a" path="res://Icons/Icons_Titatnium.png" id="3_xr4f1"]
+[ext_resource type="FontFile" uid="uid://cmqbuj73nhx8q" path="res://Fonts/Tiresias/Tiresias_Infofont.ttf" id="5_e26km"]
+[ext_resource type="FontFile" uid="uid://dikxwdtbbyk7x" path="res://Fonts/Tiresias/Tiresias Signfont Bold.TTF" id="6_dgqmo"]
+[ext_resource type="Texture2D" uid="uid://clc6vraoav2hj" path="res://Icons/Icons_x1 Materials.png" id="7_8p8yk"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="8_e13is"]
+
+[node name="Card Prefab" instance=ExtResource("1_n1s3u")]
+card_type = "Mine"
+cost = "1Fe 1Ti"
+card_name = "ore processor"
+body_text = "Whenever an adjacent building Mines for the first time this cycle, Mine 1 of that Material
+M:2"
+
+[node name="Card Title" parent="Bleed/Border/Greater Vbox" index="0"]
+self_modulate = Color(0.901961, 0.494118, 0.133333, 1)
+text = "ore processor"
+
+[node name="Cost Bar" parent="Bleed/Border/Greater Vbox" index="1"]
+visible = true
+
+[node name="@TextureRect@133537" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="1"]
+layout_mode = 2
+texture = ExtResource("2_8tl0c")
+stretch_mode = 5
+
+[node name="@TextureRect@133538" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="2"]
+layout_mode = 2
+texture = ExtResource("3_xr4f1")
+stretch_mode = 5
+
+[node name="Main Body" parent="Bleed/Border/Greater Vbox" index="2"]
+self_modulate = Color(0.901961, 0.494118, 0.133333, 1)
+
+[node name="Card Cost Spacer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="0"]
+visible = true
+
+[node name="Body Text" type="RichTextLabel" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="1"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_e26km")
+theme_override_fonts/bold_font = ExtResource("6_dgqmo")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center]Whenever an adjacent building [b][b]Mine[/b]s[/b] for the first time this cycle, [b]Mine[/b] 1 of that [b]Material[/b]"
+fit_content = true
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="2" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Material Storage" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="3"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.7
+
+[node name="Material Socket Container" type="HFlowContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Material Storage" index="0"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -559.0
+offset_right = 560.0
+offset_bottom = 484.0
+grow_horizontal = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Material Socket Template" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Material Storage/Material Socket Container" index="0"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_8p8yk")
+stretch_mode = 2
+script = ExtResource("8_e13is")
+color_type = "Storage"
+
+[node name="@TextureRect@133540" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Material Storage/Material Socket Container" index="1"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_8p8yk")
+stretch_mode = 2
+script = ExtResource("8_e13is")
+color_type = "Storage"
+
+[node name="@TextureRect@133541" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Material Storage/Material Socket Container" index="2"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_8p8yk")
+stretch_mode = 2
+script = ExtResource("8_e13is")
+color_type = "Storage"
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="0" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3

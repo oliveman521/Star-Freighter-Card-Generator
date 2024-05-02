@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://cblepcgojxx7b"]
+
+[ext_resource type="PackedScene" uid="uid://bgd70vcoi4e85" path="res://card_prefab.tscn" id="1_ise16"]
+[ext_resource type="FontFile" uid="uid://cmqbuj73nhx8q" path="res://Fonts/Tiresias/Tiresias_Infofont.ttf" id="2_581jb"]
+[ext_resource type="FontFile" uid="uid://dikxwdtbbyk7x" path="res://Fonts/Tiresias/Tiresias Signfont Bold.TTF" id="3_qm4ha"]
+[ext_resource type="Texture2D" uid="uid://vbmtk3flqw04" path="res://Icons/Hex Grids/hex_grids_12.png" id="4_cgnes"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="5_53vuo"]
+
+[node name="Card Prefab" instance=ExtResource("1_ise16")]
+card_type = "Housing"
+card_name = "cryostasis pod"
+body_text = "Colonists Stored Here are worth 0 VP
+C:12"
+
+[node name="Card Title" parent="Bleed/Border/Greater Vbox" index="0"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+text = "cryostasis pod"
+
+[node name="Main Body" parent="Bleed/Border/Greater Vbox" index="2"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+
+[node name="@Control@89825" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="1" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="@RichTextLabel@89827" type="RichTextLabel" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="2"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_581jb")
+theme_override_fonts/bold_font = ExtResource("3_qm4ha")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center][b][b]Colonist[/b]s[/b] Stored Here are worth 0 [b]VP[/b]"
+fit_content = true
+autowrap_mode = 2
+
+[node name="@Control@89828" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="3" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="@TextureRect@89829" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="4"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+texture = ExtResource("4_cgnes")
+stretch_mode = 3
+script = ExtResource("5_53vuo")
+color_type = "Housing"
+
+[node name="@Control@89830" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="5" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Box2" parent="Bleed/Border/Greater Vbox/Terraform Label" index="0"]
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+
+[node name="Terraform Body" parent="Bleed/Border/Greater Vbox" index="4"]
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="0" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3

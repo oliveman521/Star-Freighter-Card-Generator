@@ -1,0 +1,189 @@
+[gd_scene load_steps=5 format=3 uid="uid://ebsch307drwf"]
+
+[ext_resource type="PackedScene" uid="uid://bgd70vcoi4e85" path="res://card_prefab.tscn" id="1_3rpwk"]
+[ext_resource type="Texture2D" uid="uid://bfe41clyaq4lx" path="res://Icons/Icons_Iron.png" id="2_w6piq"]
+[ext_resource type="Texture2D" uid="uid://cynpf1sh1y45n" path="res://Icons/Icons_Data Storage.png" id="3_a6fmp"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="4_o74my"]
+
+[node name="Card Prefab" instance=ExtResource("1_3rpwk")]
+scale = Vector2(1, 0.994688)
+card_type = "Housing"
+cost = "1Fe"
+card_name = "data bank"
+body_text = "D:15"
+
+[node name="Card Title" parent="Bleed/Border/Greater Vbox" index="0"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+text = "data bank"
+
+[node name="Cost Bar" parent="Bleed/Border/Greater Vbox" index="1"]
+visible = true
+
+[node name="@TextureRect@68886" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="1"]
+layout_mode = 2
+texture = ExtResource("2_w6piq")
+stretch_mode = 5
+
+[node name="Main Body" parent="Bleed/Border/Greater Vbox" index="2"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+
+[node name="Card Cost Spacer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="0"]
+visible = true
+
+[node name="Data Storage" type="HFlowContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="1"]
+layout_mode = 2
+alignment = 1
+
+[node name="Data Socket Template" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="0"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68887" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="1"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68888" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="2"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68889" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="3"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68890" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="4"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68891" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="5"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68892" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="6"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68893" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="7"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68894" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="8"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68895" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="9"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68896" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="10"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68897" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="11"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68898" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="12"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68899" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="13"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68900" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="14"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="@TextureRect@68901" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="15"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_a6fmp")
+stretch_mode = 2
+script = ExtResource("4_o74my")
+color_type = "Storage"
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="2" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="0" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3

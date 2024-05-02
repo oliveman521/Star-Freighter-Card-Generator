@@ -1,0 +1,141 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8i1mpbxocyvy"]
+
+[ext_resource type="PackedScene" uid="uid://bgd70vcoi4e85" path="res://card_prefab.tscn" id="1_sfm0i"]
+[ext_resource type="Texture2D" uid="uid://bfe41clyaq4lx" path="res://Icons/Icons_Iron.png" id="3_tybmv"]
+[ext_resource type="Texture2D" uid="uid://cynpf1sh1y45n" path="res://Icons/Icons_Data Storage.png" id="4_32cq3"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="5_au0a1"]
+[ext_resource type="Texture2D" uid="uid://clc6vraoav2hj" path="res://Icons/Icons_x1 Materials.png" id="6_quq8y"]
+[ext_resource type="Texture2D" uid="uid://cryf7efoyuuvf" path="res://Icons/Icons_x5 Materials.png" id="7_c3piv"]
+
+[node name="Card Prefab" instance=ExtResource("1_sfm0i")]
+card_type = "Housing"
+cost = "1Fe"
+card_name = "warehouse"
+body_text = "D:5
+M:5"
+
+[node name="Card Title" parent="Bleed/Border/Greater Vbox" index="0"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+text = "warehouse"
+
+[node name="Cost Bar" parent="Bleed/Border/Greater Vbox" index="1"]
+visible = true
+
+[node name="@TextureRect@55198" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="1"]
+layout_mode = 2
+texture = ExtResource("3_tybmv")
+stretch_mode = 5
+
+[node name="Main Body" parent="Bleed/Border/Greater Vbox" index="2"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+
+[node name="Card Cost Spacer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="0"]
+visible = true
+
+[node name="Data Storage" type="HFlowContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="1"]
+layout_mode = 2
+alignment = 1
+
+[node name="Data Socket Template" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="0"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_32cq3")
+stretch_mode = 2
+script = ExtResource("5_au0a1")
+color_type = "Storage"
+
+[node name="@TextureRect@55199" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="1"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_32cq3")
+stretch_mode = 2
+script = ExtResource("5_au0a1")
+color_type = "Storage"
+
+[node name="@TextureRect@55200" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="2"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_32cq3")
+stretch_mode = 2
+script = ExtResource("5_au0a1")
+color_type = "Storage"
+
+[node name="@TextureRect@55201" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="3"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_32cq3")
+stretch_mode = 2
+script = ExtResource("5_au0a1")
+color_type = "Storage"
+
+[node name="@TextureRect@55202" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="4"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_32cq3")
+stretch_mode = 2
+script = ExtResource("5_au0a1")
+color_type = "Storage"
+
+[node name="@TextureRect@55203" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Data Storage" index="5"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_32cq3")
+stretch_mode = 2
+script = ExtResource("5_au0a1")
+color_type = "Storage"
+
+[node name="Material Storage" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+
+[node name="Material Socket Container" type="HFlowContainer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Material Storage" index="0"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -559.0
+offset_right = 560.0
+offset_bottom = 484.0
+grow_horizontal = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Material Socket Template" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Material Storage/Material Socket Container" index="0"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("6_quq8y")
+stretch_mode = 2
+script = ExtResource("5_au0a1")
+color_type = "Storage"
+
+[node name="@TextureRect@55204" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox/Material Storage/Material Socket Container" index="1"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_c3piv")
+stretch_mode = 2
+script = ExtResource("5_au0a1")
+color_type = "Storage"
+
+[node name="Box2" parent="Bleed/Border/Greater Vbox/Terraform Label" index="0"]
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+
+[node name="Terraform Body" parent="Bleed/Border/Greater Vbox" index="4"]
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="0"]
+layout_mode = 2
+size_flags_vertical = 3

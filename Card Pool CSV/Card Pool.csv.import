@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://5iiwdjsnmcaf"
+
+[deps]
+
+files=["res://Card Pool CSV/Card Pool.Type.translation", "res://Card Pool CSV/Card Pool.Count.translation", "res://Card Pool CSV/Card Pool.Build cost.translation", "res://Card Pool CSV/Card Pool.Effect.translation", "res://Card Pool CSV/Card Pool.Storage.translation"]
+
+source_file="res://Card Pool CSV/Card Pool.csv"
+dest_files=["res://Card Pool CSV/Card Pool.Type.translation", "res://Card Pool CSV/Card Pool.Count.translation", "res://Card Pool CSV/Card Pool.Build cost.translation", "res://Card Pool CSV/Card Pool.Effect.translation", "res://Card Pool CSV/Card Pool.Storage.translation"]
+
+[params]
+
+compress=true
+delimiter=0

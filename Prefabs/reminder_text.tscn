@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://gk04ynx2g1ol"]
+
+[ext_resource type="PackedScene" uid="uid://cxshsmcjyyfy5" path="res://Prefabs/body_text_prefab.tscn" id="1_bnvnn"]
+
+[node name="Body Text" instance=ExtResource("1_bnvnn")]
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 23

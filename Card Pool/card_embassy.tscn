@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjg01phk2vgfs"]
+
+[ext_resource type="PackedScene" uid="uid://bgd70vcoi4e85" path="res://card_prefab.tscn" id="1_s8k10"]
+[ext_resource type="Texture2D" uid="uid://bfe41clyaq4lx" path="res://Icons/Icons_Iron.png" id="3_xw88p"]
+[ext_resource type="Texture2D" uid="uid://p5lash33jr84" path="res://Icons/Icons_Gold.png" id="4_7w4s8"]
+[ext_resource type="Texture2D" uid="uid://bxpm6eku4q3xd" path="res://Icons/Hex Grids/hex_grids_3.png" id="4_a0y7v"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="5_230gj"]
+[ext_resource type="FontFile" uid="uid://cmqbuj73nhx8q" path="res://Fonts/Tiresias/Tiresias_Infofont.ttf" id="7_kfoyo"]
+[ext_resource type="FontFile" uid="uid://dikxwdtbbyk7x" path="res://Fonts/Tiresias/Tiresias Signfont Bold.TTF" id="8_onk6f"]
+
+[node name="Card Prefab" instance=ExtResource("1_s8k10")]
+cost = "1Fe 1Au"
+card_name = "embassy"
+body_text = "At the end of the game, If another player owns the majority of the Buildings on this Planet, you both gain 3VP
+C:3"
+
+[node name="Card Title" parent="Bleed/Border/Greater Vbox" index="0"]
+self_modulate = Color(0.905882, 0.298039, 0.235294, 1)
+text = "embassy"
+
+[node name="Cost Bar" parent="Bleed/Border/Greater Vbox" index="1"]
+visible = true
+
+[node name="@TextureRect@30063" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="1"]
+layout_mode = 2
+texture = ExtResource("3_xw88p")
+stretch_mode = 5
+
+[node name="@TextureRect@30064" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="2"]
+layout_mode = 2
+texture = ExtResource("4_7w4s8")
+stretch_mode = 5
+
+[node name="Main Body" parent="Bleed/Border/Greater Vbox" index="2"]
+self_modulate = Color(0.905882, 0.298039, 0.235294, 1)
+
+[node name="Card Cost Spacer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="0"]
+visible = true
+
+[node name="Body Text" type="RichTextLabel" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="1"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_kfoyo")
+theme_override_fonts/bold_font = ExtResource("8_onk6f")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center]At the end of the game, If another player owns the majority of the [b][b]Building[/b]s[/b] on this Planet, you both gain 3[b]VP[/b]"
+fit_content = true
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="2" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Colonist Grid" type="TextureRect" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="3"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+texture = ExtResource("4_a0y7v")
+stretch_mode = 3
+script = ExtResource("5_230gj")
+color_type = "Housing"
+
+[node name="@Control@30066" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="4" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Box2" parent="Bleed/Border/Greater Vbox/Terraform Label" index="0"]
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+
+[node name="Terraform Body" parent="Bleed/Border/Greater Vbox" index="4"]
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="0" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3

@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://bewiewfl0gnwe"]
+
+[ext_resource type="Texture2D" uid="uid://clc6vraoav2hj" path="res://Icons/Icons_x1 Materials.png" id="1_ttu0f"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="2_8sipg"]
+[ext_resource type="Texture2D" uid="uid://cryf7efoyuuvf" path="res://Icons/Icons_x5 Materials.png" id="3_1bcir"]
+
+[node name="Material Storage" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+
+[node name="Material Socket Container" type="HFlowContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -559.0
+offset_right = 560.0
+offset_bottom = 484.0
+grow_horizontal = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Material Socket Template" type="TextureRect" parent="Material Socket Container"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_ttu0f")
+stretch_mode = 2
+script = ExtResource("2_8sipg")
+color_type = "Storage"
+
+[node name="_TextureRect_82598" type="TextureRect" parent="Material Socket Container"]
+unique_name_in_owner = true
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_1bcir")
+stretch_mode = 2
+script = ExtResource("2_8sipg")
+color_type = "Storage"
+
+[node name="_TextureRect_82599" type="TextureRect" parent="Material Socket Container"]
+unique_name_in_owner = true
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_1bcir")
+stretch_mode = 2
+script = ExtResource("2_8sipg")
+color_type = "Storage"

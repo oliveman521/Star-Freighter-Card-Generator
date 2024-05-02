@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlp5dp68t3cva"]
+
+[ext_resource type="Texture2D" uid="uid://benwno8ndlopv" path="res://Icons/Icons_Iron.png" id="1_psek3"]
+
+[node name="Cost Icon Template" type="TextureRect"]
+texture = ExtResource("1_psek3")
+stretch_mode = 5

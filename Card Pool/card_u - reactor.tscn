@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckcr2w4ssq2js"]
+
+[ext_resource type="PackedScene" uid="uid://bgd70vcoi4e85" path="res://card_prefab.tscn" id="1_utpvm"]
+[ext_resource type="Texture2D" uid="uid://bhgr4llswit36" path="res://Icons/Icons_Water.png" id="2_nswk0"]
+[ext_resource type="FontFile" uid="uid://cmqbuj73nhx8q" path="res://Fonts/Tiresias/Tiresias_Infofont.ttf" id="4_gap0a"]
+[ext_resource type="FontFile" uid="uid://dikxwdtbbyk7x" path="res://Fonts/Tiresias/Tiresias Signfont Bold.TTF" id="5_s6ptx"]
+
+[node name="Card Prefab" instance=ExtResource("1_utpvm")]
+card_type = "Energy"
+cost = "1H2O"
+card_name = "u - reactor"
+body_text = "You may spend 1U to gain 1 Energy for each   U-Reactor in this Region.
+You may build any number of U-Reactors in this Region."
+
+[node name="Card Title" parent="Bleed/Border/Greater Vbox" index="0"]
+self_modulate = Color(0.945098, 0.768627, 0.0588235, 1)
+text = "u - reactor"
+
+[node name="Cost Bar" parent="Bleed/Border/Greater Vbox" index="1"]
+visible = true
+
+[node name="@TextureRect@22214" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="1"]
+layout_mode = 2
+texture = ExtResource("2_nswk0")
+stretch_mode = 5
+
+[node name="Main Body" parent="Bleed/Border/Greater Vbox" index="2"]
+self_modulate = Color(0.945098, 0.768627, 0.0588235, 1)
+
+[node name="Card Cost Spacer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="0"]
+visible = true
+
+[node name="Body Text" type="RichTextLabel" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="1"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_gap0a")
+theme_override_fonts/bold_font = ExtResource("5_s6ptx")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center]You may spend [img]res://Icons/Icons_Uranimum.png[/img] to gain 1 [b]Energy[/b] for each   [b]U-Reactor[/b] in this [b]Region[/b]."
+fit_content = true
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="2" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="@RichTextLabel@22217" type="RichTextLabel" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="3"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_gap0a")
+theme_override_fonts/bold_font = ExtResource("5_s6ptx")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center]You may build any number of [b][b]U-Reactor[/b]s[/b] in this [b]Region[/b]."
+fit_content = true
+autowrap_mode = 2
+
+[node name="@Control@22218" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="4" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="0" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3

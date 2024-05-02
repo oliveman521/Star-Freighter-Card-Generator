@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://bavtjhj6qdltd"]
+
+[ext_resource type="PackedScene" uid="uid://bgd70vcoi4e85" path="res://card_prefab.tscn" id="1_obajf"]
+[ext_resource type="Texture2D" uid="uid://bhgr4llswit36" path="res://Icons/Icons_Water.png" id="2_htjoy"]
+[ext_resource type="Texture2D" uid="uid://bfe41clyaq4lx" path="res://Icons/Icons_Iron.png" id="3_jterm"]
+[ext_resource type="Texture2D" uid="uid://caoovnmdwe87a" path="res://Icons/Icons_Titatnium.png" id="4_m5l32"]
+[ext_resource type="FontFile" uid="uid://cmqbuj73nhx8q" path="res://Fonts/Tiresias/Tiresias_Infofont.ttf" id="5_8xs8i"]
+[ext_resource type="Texture2D" uid="uid://p5lash33jr84" path="res://Icons/Icons_Gold.png" id="5_xbsea"]
+[ext_resource type="FontFile" uid="uid://dikxwdtbbyk7x" path="res://Fonts/Tiresias/Tiresias Signfont Bold.TTF" id="6_lln33"]
+[ext_resource type="Texture2D" uid="uid://b2xf7lfnrjfna" path="res://Icons/Hex Grids/hex_grids_5.png" id="8_5k7h1"]
+[ext_resource type="Script" path="res://AutoColor.gd" id="8_y4f03"]
+
+[node name="Card Prefab" instance=ExtResource("1_obajf")]
+card_type = "Housing"
+cost = "2H2O 1Fe 1Ti 1Au"
+card_name = "planetary hub"
+body_text = "Each Refugee in an adjacent Building is worth an additional VP
+-TF-
+C:5"
+
+[node name="Card Title" parent="Bleed/Border/Greater Vbox" index="0"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+text = "planetary hub"
+
+[node name="Cost Bar" parent="Bleed/Border/Greater Vbox" index="1"]
+visible = true
+
+[node name="@TextureRect@132228" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="1"]
+layout_mode = 2
+texture = ExtResource("2_htjoy")
+stretch_mode = 5
+
+[node name="@TextureRect@132229" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="2"]
+layout_mode = 2
+texture = ExtResource("2_htjoy")
+stretch_mode = 5
+
+[node name="@TextureRect@132230" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="3"]
+layout_mode = 2
+texture = ExtResource("3_jterm")
+stretch_mode = 5
+
+[node name="@TextureRect@132231" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="4"]
+layout_mode = 2
+texture = ExtResource("4_m5l32")
+stretch_mode = 5
+
+[node name="@TextureRect@132232" type="TextureRect" parent="Bleed/Border/Greater Vbox/Cost Bar/MarginContainer/Cost Container" index="5"]
+layout_mode = 2
+texture = ExtResource("5_xbsea")
+stretch_mode = 5
+
+[node name="Main Body" parent="Bleed/Border/Greater Vbox" index="2"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+
+[node name="Card Cost Spacer" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="0"]
+visible = true
+
+[node name="@RichTextLabel@132234" type="RichTextLabel" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="1"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_8xs8i")
+theme_override_fonts/bold_font = ExtResource("6_lln33")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center]Each Refugee in an adjacent [b]Building[/b] is worth an additional VP"
+fit_content = true
+autowrap_mode = 2
+
+[node name="@Control@132235" type="Control" parent="Bleed/Border/Greater Vbox/Main Body/MarginContainer/Body VBox" index="2" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Terraform Label" parent="Bleed/Border/Greater Vbox" index="3"]
+visible = true
+
+[node name="Box2" parent="Bleed/Border/Greater Vbox/Terraform Label" index="0"]
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+
+[node name="Terraform Body" parent="Bleed/Border/Greater Vbox" index="4"]
+visible = true
+self_modulate = Color(0.152941, 0.682353, 0.376471, 1)
+
+[node name="Spacer" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="0" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Colonist Grid" type="TextureRect" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="1"]
+self_modulate = Color(0.584314, 0.647059, 0.65098, 1)
+layout_mode = 2
+texture = ExtResource("8_5k7h1")
+stretch_mode = 3
+script = ExtResource("8_y4f03")
+color_type = "Housing"
+
+[node name="@Control@132236" type="Control" parent="Bleed/Border/Greater Vbox/Terraform Body/Body Margin/Terraform VBox" index="2" groups=["Spacer"]]
+layout_mode = 2
+size_flags_vertical = 3
